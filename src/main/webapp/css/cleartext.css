@@ -1,0 +1,11 @@
+.error{
+	color: red;
+}
+.notification{
+	color: blue;
+}
+
+table, th, td
+{
+border: 1px solid black;
+}

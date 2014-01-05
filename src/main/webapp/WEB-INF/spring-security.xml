@@ -1,0 +1,33 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<!-- Instructions on Spring Security http://www.mkyong.com/spring-security/spring-security-form-login-example/ -->
+	<http auto-config="true">
+		<intercept-url pattern="/secure*" access="ROLE_USER" />
+		<form-login login-page="/login" default-target-url="/secure/index"
+			authentication-failure-url="/loginfailed" />
+		<logout logout-success-url="/logout" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="james" password="james" authorities="ROLE_USER" />
+				<user name="user1" password="user1" authorities="ROLE_USER" />
+				<user name="user2" password="user2" authorities="ROLE_USER" />
+				<user name="user3" password="user3" authorities="ROLE_USER" />
+				<user name="user4" password="user4" authorities="ROLE_USER" />
+				<user name="user5" password="user5" authorities="ROLE_USER" />
+				<user name="user6" password="user6" authorities="ROLE_USER" />
+				<user name="user7" password="user7" authorities="ROLE_USER" />
+				<user name="user8" password="user8" authorities="ROLE_USER" />
+				<user name="user9" password="user9" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>
